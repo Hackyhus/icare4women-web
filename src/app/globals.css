@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Rahmah Cycles Brand Palette */
+  --rc-primary: #D1A2B5; /* Soft Muted Pink/Lavender */
+  --rc-primary-dark: #A36D85;
+  --rc-primary-light: #F3E5EC;
+  
+  --rc-secondary: #E3D2C1; /* Warm Beige */
+  --rc-secondary-light: #F9F6F0;
+
+  --rc-accent: #9FBDA3; /* Soft Sage Green */
+
+  --rc-text-main: #3D353A;
+  --rc-text-light: #6E686A;
+  --rc-bg: #FCFBFA;
+  
+  --rc-surface: #FFFFFF;
+  --rc-border: #E8E2E5;
+
+  /* Typography */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
+
+  /* Elevations */
+  --shadow-sm: 0 2px 8px rgba(163, 109, 133, 0.05);
+  --shadow-md: 0 8px 24px rgba(163, 109, 133, 0.08);
+  --shadow-lg: 0 16px 48px rgba(163, 109, 133, 0.12);
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-normal: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-slow: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --rc-text-main: #F3E5EC;
+    --rc-text-light: #D1A2B5;
+    --rc-bg: #221A1D;
+    
+    --rc-surface: #2E2428;
+    --rc-border: #4A3C43;
+    
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--rc-bg);
+  color: var(--rc-text-main);
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--rc-text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+button, a {
+  transition: all var(--transition-fast);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.hover-lift {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: rgba(46, 36, 40, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}

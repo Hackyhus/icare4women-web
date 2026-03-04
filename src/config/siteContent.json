@@ -1,0 +1,187 @@
+{
+  "global": {
+    "projectName": "iCare4Women",
+    "doctorName": "Dr. Maryam",
+    "pricing": {
+      "amount": "₦50,000",
+      "currency": "NGN",
+      "note": "₦50,000 per session • Online only"
+    },
+    "vaginismusRedirectUrl": "https://beyondvaginismus.com",
+    "calendlySetup": {
+      "durationStr": "45 minutes",
+      "basePriceStr": "₦50,000"
+    }
+  },
+  "home": {
+    "hero": {
+      "headline": "Online Reproductive & Gynecological Consultations",
+      "subheadline": "Expert care designed for your privacy, convenience, and peace of mind.",
+      "ctaText": "Book Consultation"
+    },
+    "howItWorks": [
+      {
+        "step": 1,
+        "title": "Book Your Session",
+        "description": "Choose a convenient time using our secure Calendly integration."
+      },
+      {
+        "step": 2,
+        "title": "Complete Payment",
+        "description": "Confirm your appointment by making the ₦50,000 payment for the session."
+      },
+      {
+        "step": 3,
+        "title": "Consult Online",
+        "description": "Speak with Dr. Maryam directly via a secure, private video call."
+      },
+      {
+        "step": 4,
+        "title": "Get Your Plan",
+        "description": "Receive a structured path forward, tailored to your specific needs."
+      }
+    ],
+    "whoItsFor": "Women seeking specialized, private gynecological and reproductive health guidance from the comfort of their homes.",
+    "areasOfFocusNote": "For vaginismus care, visit BeyondVaginismus.com"
+  },
+  "services": [
+    {
+      "id": "reproductive-health",
+      "title": "Reproductive Health Consultation",
+      "whoItsFor": "Women experiencing general reproductive health concerns needing expert review.",
+      "includes": [
+        "Comprehensive symptom review",
+        "Diagnostic guidance",
+        "Personalized care recommendations",
+        "Follow-up planning"
+      ]
+    },
+    {
+      "id": "fertility-strategy",
+      "title": "Fertility Strategy Session",
+      "whoItsFor": "Couples or individuals looking to understand and optimize their fertility journey.",
+      "includes": [
+        "In-depth fertility history analysis",
+        "Review of past investigations",
+        "Step-by-step strategy for conception",
+        "Lifestyle and supplement guidance"
+      ]
+    },
+    {
+      "id": "pregnancy-support",
+      "title": "Pregnancy Support Consultation",
+      "whoItsFor": "Expectant mothers seeking trusted advice and second opinions during pregnancy.",
+      "includes": [
+        "Timeline and milestone review",
+        "Symptom management advice",
+        "Red-flag identification",
+        "Emotional wellness support"
+      ]
+    },
+    {
+      "id": "hormonal-cycle",
+      "title": "Hormonal & Cycle Review",
+      "whoItsFor": "Women dealing with irregular cycles, PCOS, or perimenopause symptoms.",
+      "includes": [
+        "Cycle tracking analysis",
+        "Hormonal imbalance evaluation",
+        "Management strategies for PCOS/Menopause",
+        "Dietary and lifestyle adjustments"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "infertility",
+      "title": "Infertility",
+      "symptoms": ["Difficulty conceiving after 12 months (or 6 months if >35)", "Irregular menstrual cycles", "Painful periods"],
+      "causes": ["Ovulation disorders", "Tubal blockages", "Endometriosis", "Male factor"],
+      "redFlags": ["Severe pelvic pain", "Unexplained weight changes"],
+      "evaluation": "Review of medical history, semen analysis (if applicable), and targeted blood tracking.",
+      "treatment": "Guided ovulation tracking, lifestyle adjustments, and possible referral for further ART interventions."
+    },
+    {
+      "id": "pcos",
+      "title": "PCOS (Polycystic Ovary Syndrome)",
+      "symptoms": ["Irregular periods", "Excess hair growth", "Acne", "Weight gain"],
+      "causes": ["Insulin resistance", "Hormonal imbalances", "Genetic factors"],
+      "redFlags": ["Prolonged heavy bleeding after months of no periods"],
+      "evaluation": "Detailed clinical history mapped with hormonal profiles and ultrasound findings.",
+      "treatment": "Lifestyle modifications, hormonal balance strategies, and managing metabolic risks."
+    },
+    {
+      "id": "menstrual-irregularities",
+      "title": "Menstrual Irregularities",
+      "symptoms": ["Periods arriving <21 days or >35 days", "Extremely heavy bleeding", "Spotting between periods"],
+      "causes": ["Stress", "Thyroid issues", "Fibroids/Polyps", "Hormonal fluctuations"],
+      "redFlags": ["Bleeding requiring pad changes every 1-2 hours", "Post-menopausal bleeding"],
+      "evaluation": "Thorough tracking review and specific endocrine/hormonal test recommendations.",
+      "treatment": "Tailored approach ranging from lifestyle fixes to hormonal support therapies."
+    },
+    {
+      "id": "vaginal-infections",
+      "title": "Vaginal Infections & Discharge",
+      "symptoms": ["Unusual odor", "Itching or irritation", "Changes in discharge color/consistency"],
+      "causes": ["Bacterial Vaginosis (BV)", "Yeast infections", "STIs", "pH imbalances"],
+      "redFlags": ["Pelvic pain with fever", "Bleeding after intercourse"],
+      "evaluation": "Symptom description analysis and swab guidance.",
+      "treatment": "Targeted pharmaceutical or holistic advice for balancing the vaginal microbiome."
+    },
+    {
+      "id": "menopause",
+      "title": "Menopause & Perimenopause",
+      "symptoms": ["Hot flashes", "Night sweats", "Mood changes", "Vaginal dryness"],
+      "causes": ["Natural decline in reproductive hormones", "Surgical interventions"],
+      "redFlags": ["Any bleeding occurring 12+ months after the last period"],
+      "evaluation": "Assessment of symptom severity and quality of life impact.",
+      "treatment": "Navigating hormone replacement options, non-hormonal therapies, and lifestyle shifts."
+    },
+    {
+      "id": "pelvic-floor",
+      "title": "Pelvic Floor Concerns",
+      "symptoms": ["Urine leakage", "Pelvic heaviness", "Painful intercourse"],
+      "causes": ["Childbirth", "Aging", "Chronic strain"],
+      "redFlags": ["Sudden inability to urinate or control bowels"],
+      "evaluation": "Symptom reporting to classify the type of dysfunction.",
+      "treatment": "Pelvic floor exercises, lifestyle modifications, and physiotherapy guidance."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Who is this for?",
+      "answer": "Women looking for a private, professional, online consultation regarding their reproductive and gynecological health, from infertility to hormonal cycles."
+    },
+    {
+      "question": "Is it online only?",
+      "answer": "Yes, all consultations are 100% online through secure video calls. Physical examinations are not performed."
+    },
+    {
+      "question": "Can I book from outside Nigeria?",
+      "answer": "Absolutely. Location is not a barrier for our online consultations. Just ensure the time zone matches when booking on Calendly."
+    },
+    {
+      "question": "What happens after I book?",
+      "answer": "You will receive a confirmation email with details instructions and the payment process required to secure your slot."
+    },
+    {
+      "question": "Do I need tests before booking?",
+      "answer": "No. If you have previous test results, you can bring them. If not, Dr. Maryam will advise on what tests are necessary during the call."
+    },
+    {
+      "question": "Will you prescribe medication?",
+      "answer": "Prescriptions will depend on exactly what was diagnosed during the consultation and local regulatory allowances for telemedicine. Appropriate recommendations or referrals will always be provided."
+    },
+    {
+      "question": "Can my husband join a fertility consult?",
+      "answer": "Yes, we highly encourage both partners to be present for Fertility Strategy Sessions."
+    },
+    {
+      "question": "What is your reschedule/cancellation policy?",
+      "answer": "We require at least 24 hours notice for rescheduling. Please view our full policy for details on cancellations and refunds."
+    },
+    {
+      "question": "Where do I go for vaginismus care?",
+      "answer": "For concerns relating to Vaginismus or unconsummated marriages, please visit our dedicated platform at BeyondVaginismus.com."
+    }
+  ]
+}
