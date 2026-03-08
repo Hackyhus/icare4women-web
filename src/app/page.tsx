@@ -1,95 +1,250 @@
+"use client";
+
 import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import siteContent from "@/config/siteContent.json";
+import Button from "@/components/ui/Button";
+import FadeIn from "@/components/ui/FadeIn";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const { hero, howItWorks, whoItsFor, areasOfFocusNote } = siteContent.home;
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  return (
+    <div>
+      {/* Hero Section */}
+      <section style={{ 
+        position: "relative", 
+        padding: "8rem 0 6rem", 
+        minHeight: "85vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        overflow: "hidden"
+      }}>
+        <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: -1 }}>
+          <Image 
+            src="/images/hero-bg.png" 
+            alt="Abstract Calming Background" 
+            fill 
+            style={{ objectFit: "cover", objectPosition: "center", opacity: 0.5 }} 
+            priority 
+          />
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        
+        <FadeIn>
+          <div className="container" style={{ textAlign: "center", position: "relative", zIndex: 1 }}>
+            <div style={{ 
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              backgroundColor: "var(--rc-primary-light)", 
+              color: "var(--rc-primary-dark)",
+              padding: "0.5rem 1.25rem",
+              borderRadius: "50px",
+              fontSize: "0.9rem",
+              fontWeight: "600",
+              marginBottom: "2rem",
+              boxShadow: "var(--shadow-sm)"
+            }}>
+              <Sparkles size={16} />
+              {siteContent.global.pricing.note}
+            </div>
+            
+            <h1 
+              className="text-gradient"
+              style={{ 
+              fontSize: "clamp(3rem, 8vw, 5.5rem)", 
+              fontWeight: "700",
+              marginBottom: "1.5rem",
+              maxWidth: "900px",
+              marginLeft: "auto",
+              marginRight: "auto",
+              lineHeight: 1.1,
+              letterSpacing: "-0.03em"
+            }}>
+              {hero.headline}
+            </h1>
+            
+            <p style={{ 
+              fontSize: "clamp(1.1rem, 2vw, 1.3rem)",
+              color: "var(--rc-text-light)",
+              marginBottom: "2.5rem",
+              maxWidth: "600px",
+              marginLeft: "auto",
+              marginRight: "auto",
+              lineHeight: 1.6
+            }}>
+              {hero.subheadline}
+            </p>
+            
+            <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+              <Button href="/book" size="lg" showIcon>{hero.ctaText}</Button>
+              <Button href="/services" variant="secondary" size="lg">Explore Services</Button>
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+
+      {/* Areas of Focus Grid */}
+      <section style={{ padding: "6rem 0", backgroundColor: "var(--rc-surface)" }}>
+        <div className="container">
+          <FadeIn delay={0.1}>
+            <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+              <h2 style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>Areas of Focus</h2>
+              <p style={{ color: "var(--rc-text-light)" }}>Specialized attention for every stage of your journey.</p>
+            </div>
+          </FadeIn>
+          
+          <div style={{ 
+            display: "grid", 
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", 
+            gap: "2rem" 
+          }}>
+            {siteContent.conditions.map((condition, index) => (
+              <FadeIn key={condition.id} delay={0.1 * (index + 1)}>
+                <Link 
+                  href={"/conditions#" + condition.id} 
+                  className="hover-lift glass-glow"
+                  style={{
+                    padding: "2rem",
+                    borderRadius: "20px",
+                    textAlign: "center",
+                    textDecoration: "none",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "1rem",
+                    border: "1px solid var(--rc-primary-light)",
+                    height: "100%"
+                  }}
+                >
+                  <div style={{ 
+                    width: "60px", height: "60px", borderRadius: "50%", 
+                    backgroundColor: "var(--rc-primary-light)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: "var(--rc-primary-dark)", fontSize: "1.5rem"
+                  }}>
+                    ✨
+                  </div>
+                  <h3 style={{ fontSize: "1.2rem", fontWeight: "600", color: "var(--rc-text-main)" }}>{condition.title}</h3>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.4}>
+            <div style={{ textAlign: "center", marginTop: "4rem" }}>
+              <p style={{ fontSize: "1rem", color: "var(--rc-text-light)" }}>
+                {areasOfFocusNote.split("BeyondVaginismus.com")[0]}
+                <a 
+                  href={siteContent.global.vaginismusRedirectUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "var(--rc-primary-dark)", fontWeight: "600", textDecoration: "underline", display: "inline-flex", alignItems: "center", gap: "4px" }}
+                >
+                  BeyondVaginismus.com
+                  <ArrowRight size={14} />
+                </a>
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Editorial Image Feature */}
+      <section style={{ padding: "4rem 0", backgroundColor: "var(--rc-surface)" }}>
+        <div className="container" style={{ maxWidth: "1000px" }}>
+          <FadeIn>
+            <div className="glass-glow" style={{ 
+              position: "relative", 
+              width: "100%", 
+              height: "400px", 
+              borderRadius: "32px", 
+              overflow: "hidden",
+              border: "1px solid var(--rc-primary-light)"
+            }}>
+              <Image 
+                src="/images/islamic-couple-garden.png" 
+                alt="Online Reproductive Health Consultation" 
+                fill 
+                style={{ objectFit: "cover", objectPosition: "center" }} 
+              />
+              <div style={{ 
+                position: "absolute", 
+                inset: 0, 
+                background: "linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%)",
+                pointerEvents: "none"
+              }} />
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section style={{ padding: "8rem 0", backgroundColor: "var(--rc-bg)" }}>
+        <div className="container">
+          <FadeIn>
+            <div style={{ textAlign: "center", marginBottom: "5rem" }}>
+              <h2 style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>How It Works</h2>
+              <p style={{ color: "var(--rc-text-light)" }}>A structured, seamless process tailored to you.</p>
+            </div>
+          </FadeIn>
+
+          <div style={{ 
+            display: "grid", 
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", 
+            gap: "3rem" 
+          }}>
+            {howItWorks.map((item, index) => (
+              <FadeIn key={item.step} delay={0.1 * index}>
+                <div style={{ textAlign: "center", padding: "1rem" }}>
+                  <div style={{
+                    width: "60px", height: "60px", borderRadius: "50%",
+                    backgroundColor: "var(--rc-primary)", color: "#fff",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    fontSize: "1.5rem", fontWeight: "bold", margin: "0 auto 1.5rem",
+                    boxShadow: "var(--shadow-md)"
+                  }}>
+                    {item.step}
+                  </div>
+                  <h3 style={{ fontSize: "1.35rem", marginBottom: "1rem", color: "var(--rc-text-main)" }}>{item.title}</h3>
+                  <p style={{ color: "var(--rc-text-light)", fontSize: "1rem", lineHeight: 1.6 }}>{item.description}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who it's for & Final CTA */}
+      <section style={{ 
+        padding: "8rem 0", 
+        backgroundColor: "var(--rc-primary-light)",
+        color: "var(--rc-text-main)",
+        textAlign: "center"
+      }}>
+        <div className="container" style={{ maxWidth: "800px" }}>
+          <FadeIn>
+            <h2 style={{ fontSize: "2.5rem", marginBottom: "2rem", color: "var(--rc-text-main)" }}>Who is this for?</h2>
+            <p style={{ fontSize: "1.2rem", marginBottom: "4rem", opacity: 0.95, lineHeight: 1.8 }}>
+              {whoItsFor}
+            </p>
+          </FadeIn>
+          
+          <FadeIn delay={0.2}>
+            <div className="glass-glow hover-lift" style={{ padding: "4rem", borderRadius: "32px" }}>
+              <h3 style={{ fontSize: "2rem", marginBottom: "1.5rem", color: "var(--rc-text-main)" }}>Ready to take control of your health?</h3>
+              <p style={{ marginBottom: "2.5rem", color: "var(--rc-text-light)", fontSize: "1.1rem" }}>
+                {siteContent.global.pricing.note}
+              </p>
+              <Button href="/book" size="lg" showIcon>
+                Book Your Consultation Now
+              </Button>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
     </div>
   );
 }
