@@ -1,4 +1,3 @@
-import Image from "next/image";
 import siteContent from "@/config/siteContent.json";
 import ServiceCard from "@/components/ui/ServiceCard";
 import Button from "@/components/ui/Button";
@@ -63,22 +62,12 @@ export default function ServicesPage() {
           gap: "3rem",
           alignItems: "center"
         }}>
-          <div style={{ flex: "1 1 300px" }}>
+          <div style={{ flex: "1 1 auto", textAlign: "center" }}>
             <h3 className="text-gradient" style={{ fontSize: "2rem", marginBottom: "1rem" }}>Need something else?</h3>
-            <p style={{ color: "var(--rc-text-light)", marginBottom: "2rem", fontSize: "1.1rem", lineHeight: "1.8" }}>
+            <p style={{ color: "var(--rc-text-light)", marginBottom: "2rem", fontSize: "1.1rem", lineHeight: "1.8", maxWidth: "600px", margin: "0 auto 2rem" }}>
               If you are unsure which option is right for you, book the <strong>Reproductive Health Consultation</strong>. Dr. Maryam will guide you.
             </p>
             <Button href="/book" showIcon>Book Consultation</Button>
-          </div>
-          <div style={{ flex: "1 1 300px", display: "flex", justifyContent: "center" }}>
-             <div style={{ position: "relative", width: "100%", maxWidth: "400px", aspectRatio: "1/1" }}>
-               <Image 
-                 src="/images/couple-illustration.png" 
-                 alt="Couple Illustration" 
-                 fill
-                 style={{ objectFit: "contain", filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.15))" }}
-               />
-             </div>
           </div>
         </div>
       </FadeIn>

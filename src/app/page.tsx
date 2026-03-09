@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import siteContent from "@/config/siteContent.json";
 import Button from "@/components/ui/Button";
@@ -22,15 +21,7 @@ export default function Home() {
         justifyContent: "center",
         overflow: "hidden"
       }}>
-        <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: -1 }}>
-          <Image 
-            src="/images/hero-bg.png" 
-            alt="Abstract Calming Background" 
-            fill 
-            style={{ objectFit: "cover", objectPosition: "center", opacity: 0.5 }} 
-            priority 
-          />
-        </div>
+
         
         <FadeIn>
           <div className="container" style={{ textAlign: "center", position: "relative", zIndex: 1 }}>
@@ -152,34 +143,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Editorial Image Feature */}
-      <section style={{ padding: "4rem 0", backgroundColor: "var(--rc-surface)" }}>
-        <div className="container" style={{ maxWidth: "1000px" }}>
-          <FadeIn>
-            <div className="glass-glow" style={{ 
-              position: "relative", 
-              width: "100%", 
-              height: "400px", 
-              borderRadius: "32px", 
-              overflow: "hidden",
-              border: "1px solid var(--rc-primary-light)"
-            }}>
-              <Image 
-                src="/images/islamic-couple-garden.png" 
-                alt="Online Reproductive Health Consultation" 
-                fill 
-                style={{ objectFit: "cover", objectPosition: "center" }} 
-              />
-              <div style={{ 
-                position: "absolute", 
-                inset: 0, 
-                background: "linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%)",
-                pointerEvents: "none"
-              }} />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+
 
       {/* How it works */}
       <section style={{ padding: "8rem 0", backgroundColor: "var(--rc-bg)" }}>
