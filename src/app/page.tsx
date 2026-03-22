@@ -7,7 +7,7 @@ import FadeIn from "@/components/ui/FadeIn";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Home() {
-  const { hero, howItWorks, whoItsFor, areasOfFocusNote } = siteContent.home;
+  const { hero, howItWorks, whoItsFor } = siteContent.home;
 
   return (
     <div>
@@ -39,7 +39,7 @@ export default function Home() {
               boxShadow: "var(--shadow-sm)"
             }}>
               <Sparkles size={16} />
-              {siteContent.global.pricing.note}
+              Expert Reproductive & Gynecological Care
             </div>
             
             <h1 
@@ -125,19 +125,39 @@ export default function Home() {
           </div>
 
           <FadeIn delay={0.4}>
-            <div style={{ textAlign: "center", marginTop: "4rem" }}>
-              <p style={{ fontSize: "1rem", color: "var(--rc-text-light)" }}>
-                {areasOfFocusNote.split("BeyondVaginismus.com")[0]}
-                <a 
-                  href={siteContent.global.vaginismusRedirectUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "var(--rc-primary-dark)", fontWeight: "600", textDecoration: "underline", display: "inline-flex", alignItems: "center", gap: "4px" }}
-                >
-                  BeyondVaginismus.com
-                  <ArrowRight size={14} />
-                </a>
+            <div style={{ 
+              textAlign: "center", 
+              marginTop: "5rem",
+              padding: "3rem",
+              backgroundColor: "rgba(188, 122, 147, 0.05)",
+              borderRadius: "24px",
+              border: "1px dashed var(--rc-primary)"
+            }}>
+              <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "var(--rc-text-main)" }}>Specialized Vaginismus Care</h3>
+              <p style={{ fontSize: "1.1rem", color: "var(--rc-text-light)", marginBottom: "1.5rem" }}>
+                For concerns relating to Vaginismus or unconsummated marriages, please visit our dedicated platform:
               </p>
+              <a 
+                href={siteContent.global.vaginismusRedirectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ 
+                  color: "var(--rc-primary-dark)", 
+                  fontWeight: "700", 
+                  fontSize: "1.3rem",
+                  textDecoration: "underline", 
+                  display: "inline-flex", 
+                  alignItems: "center", 
+                  gap: "8px",
+                  padding: "0.5rem 1rem",
+                  backgroundColor: "#fff",
+                  borderRadius: "12px",
+                  boxShadow: "var(--shadow-sm)"
+                }}
+              >
+                BeyondVaginismus.com
+                <ArrowRight size={20} />
+              </a>
             </div>
           </FadeIn>
         </div>
@@ -181,6 +201,97 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Meet Your Doctor */}
+      <section style={{ padding: "6rem 0", backgroundColor: "var(--rc-surface)" }}>
+        <div className="container">
+          <FadeIn>
+            <div className="doctor-split" style={{
+              display: "grid",
+              gap: "0",
+              borderRadius: "32px",
+              overflow: "hidden",
+              border: "1px solid var(--rc-border)",
+              minHeight: "450px"
+            }}>
+              {/* Photo Side */}
+              <div style={{
+                position: "relative",
+                minHeight: "400px"
+              }}>
+                <img
+                  src="/images/dr-maryam-working.jpg"
+                  alt="Dr. Maryam providing telehealth consultation"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center 25%",
+                    display: "block"
+                  }}
+                />
+                {/* Subtle dark overlay to blend with UI */}
+                <div style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: "linear-gradient(135deg, rgba(45, 25, 35, 0.15) 0%, rgba(45, 25, 35, 0.3) 100%)",
+                  mixBlendMode: "multiply"
+                }} />
+              </div>
+              {/* Text Side */}
+              <div style={{
+                padding: "3rem",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                backgroundColor: "var(--rc-bg)"
+              }}>
+                <p style={{
+                  fontSize: "0.85rem",
+                  fontWeight: "700",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  color: "var(--rc-primary)",
+                  marginBottom: "1rem"
+                }}>
+                  Meet Your Doctor
+                </p>
+                <h2 style={{
+                  fontSize: "2rem",
+                  fontWeight: "800",
+                  marginBottom: "1rem",
+                  lineHeight: 1.2
+                }}>
+                  Dr. Maryam
+                </h2>
+                <p style={{
+                  color: "var(--rc-text-light)",
+                  lineHeight: 1.7,
+                  marginBottom: "1.5rem",
+                  fontSize: "1.05rem"
+                }}>
+                  A specialist in reproductive endocrinology, fertility strategies, and menstrual disorders — dedicated to providing private, structured, and expert gynecological care online.
+                </p>
+                <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                  <Button href="/about" variant="secondary" size="md">Learn More</Button>
+                  <Button href="/book" size="md" showIcon>Book a Session</Button>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+
+        <style jsx>{`
+          .doctor-split {
+            grid-template-columns: 1fr 1fr;
+          }
+          @media (max-width: 768px) {
+            .doctor-split {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        `}</style>
+      </section>
+
       {/* Who it's for & Final CTA */}
       <section style={{ 
         padding: "8rem 0", 
@@ -199,9 +310,6 @@ export default function Home() {
           <FadeIn delay={0.2}>
             <div className="glass-glow hover-lift" style={{ padding: "4rem", borderRadius: "32px" }}>
               <h3 style={{ fontSize: "2rem", marginBottom: "1.5rem", color: "var(--rc-text-main)" }}>Ready to take control of your health?</h3>
-              <p style={{ marginBottom: "2.5rem", color: "var(--rc-text-light)", fontSize: "1.1rem" }}>
-                {siteContent.global.pricing.note}
-              </p>
               <Button href="/book" size="lg" showIcon>
                 Book Your Consultation Now
               </Button>

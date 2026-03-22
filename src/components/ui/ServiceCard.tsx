@@ -13,7 +13,7 @@ export default function ServiceCard({
   title,
   whoItsFor,
   includes,
-  priceStr = "₦50,000",
+  priceStr,
   durationStr = "45 mins",
   ctaLink = "/book"
 }: ServiceCardProps) {
@@ -57,7 +57,9 @@ export default function ServiceCard({
         gap: "1rem"
       }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.5rem" }}>
-          <span style={{ fontSize: "1.5rem", fontWeight: "700", color: "var(--rc-primary-dark)" }}>{priceStr}</span>
+          {priceStr && (
+            <span style={{ fontSize: "1.5rem", fontWeight: "700", color: "var(--rc-primary-dark)" }}>{priceStr}</span>
+          )}
           <span style={{ fontSize: "0.9rem", background: "var(--rc-primary-light)", color: "var(--rc-primary-dark)", padding: "0.3rem 0.8rem", borderRadius: "10px", fontWeight: "600" }}>
             {durationStr}
           </span>

@@ -2,9 +2,12 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 import siteContent from "@/config/siteContent.json";
 
 export default function Header() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -53,7 +56,7 @@ export default function Header() {
             display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: "bold", fontSize: "1.2rem",
             boxShadow: "var(--shadow-sm)"
           }}>
-            RC
+            iC
           </div>
           <span style={{ fontSize: "1.3rem", fontWeight: "600", color: "var(--rc-text-main)", letterSpacing: "-0.5px" }}>
             {siteContent.global.projectName}
@@ -63,18 +66,41 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav style={{ display: "none" }} className="desktop-nav">
           <ul style={{ display: "flex", gap: "2rem", listStyle: "none", margin: 0, padding: 0 }}>
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  style={{ fontWeight: "500", color: "var(--rc-text-light)", textDecoration: "none", fontSize: "0.95rem" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--rc-primary-dark)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--rc-text-light)")}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.name} style={{ position: "relative" }}>
+                  <Link
+                    href={link.href}
+                    style={{ 
+                      fontWeight: "600", 
+                      color: isActive ? "var(--rc-primary-dark)" : "var(--rc-text-light)", 
+                      textDecoration: "none", 
+                      fontSize: "0.95rem",
+                      transition: "color 0.3s ease"
+                    }}
+                  >
+                    {link.name}
+                  </Link>
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-underline"
+                      style={{
+                        position: "absolute",
+                        bottom: "-8px",
+                        left: "0",
+                        right: "0",
+                        height: "3px",
+                        background: "linear-gradient(90deg, var(--rc-primary), var(--rc-primary-dark))",
+                        borderRadius: "50px",
+                        boxShadow: "0 2px 10px rgba(188, 122, 147, 0.4)",
+                      }}
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
 

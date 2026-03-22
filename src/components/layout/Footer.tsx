@@ -24,7 +24,7 @@ export default function Footer() {
             display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: "bold", fontSize: "1.5rem",
             boxShadow: "var(--shadow-sm)"
           }}>
-            RC
+            iC
           </div>
           <h2 style={{ fontSize: "1.5rem", fontWeight: "600", color: "var(--rc-text-main)" }}>
             {siteContent.global.projectName}
@@ -35,7 +35,7 @@ export default function Footer() {
         </div>
 
         <nav style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap", marginTop: "1rem" }}>
-          <Link href="/privacy-policy" style={{ color: "var(--rc-text-light)", fontSize: "0.9rem" }}>Privacy Policy</Link>
+          <Link href="/privacy" style={{ color: "var(--rc-text-light)", fontSize: "0.9rem" }}>Privacy Policy</Link>
           <Link href="/terms" style={{ color: "var(--rc-text-light)", fontSize: "0.9rem" }}>Terms of Use</Link>
           <Link href="/faq" style={{ color: "var(--rc-text-light)", fontSize: "0.9rem" }}>FAQs</Link>
         </nav>

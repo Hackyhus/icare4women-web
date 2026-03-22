@@ -1,8 +1,8 @@
 <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="256" height="256" rx="64" fill="url(#bv-gradient)"/>
-  <text x="50%" y="54%" font-family="system-ui, -apple-system, sans-serif" font-size="110" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle" letter-spacing="-4">BV</text>
+  <rect width="256" height="256" rx="64" fill="url(#rc-gradient)"/>
+  <text x="50%" y="54%" font-family="system-ui, -apple-system, sans-serif" font-size="110" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle" letter-spacing="-4">RC</text>
   <defs>
-    <linearGradient id="bv-gradient" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
+    <linearGradient id="rc-gradient" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#D1A2B5"/>
       <stop offset="100%" stop-color="#A36D85"/>
     </linearGradient>

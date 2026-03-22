@@ -1,0 +1,30 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isDoctor() {
+      return isAuthenticated() && 
+        firestore.get(/databases/beyond/documents/users/$(request.auth.uid)).data.role == 'doctor';
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Isolate icare4women app data
+    match /icare4women/patients/{userId}/{fileName} {
+      allow read: if isOwner(userId) || isDoctor();
+      allow write: if isOwner(userId);
+    }
+    
+    match /icare4women/assets/{allPaths=**} {
+      allow read: if true;
+      allow write: if isDoctor();
+    }
+  }
+}

@@ -5,6 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import FadeIn from "@/components/ui/FadeIn";
+import Link from "next/link";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -19,8 +20,20 @@ export default function LoginPage() {
     setError("");
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      router.push("/profile");
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const uid = userCredential.user.uid;
+
+      // Check role for smart redirection
+      const { doc, getDoc } = await import("firebase/firestore");
+      const { db } = await import("@/lib/firebase");
+      const docSnap = await getDoc(doc(db, "users", uid));
+      const userData = docSnap.data();
+
+      if (userData?.role === 'doctor') {
+        router.push("/doctor");
+      } else {
+        router.push("/profile");
+      }
     } catch {
       setError("Invalid email or password.");
     } finally {
@@ -79,6 +92,10 @@ export default function LoginPage() {
               {loading ? "Authenticating..." : "Secure Login"}
             </button>
           </form>
+
+          <p style={{ marginTop: "2rem", color: "var(--rc-text-light)", fontSize: "0.95rem" }}>
+            Don&apos;t have an account? <Link href="/signup" style={{ color: "var(--rc-primary-dark)", fontWeight: "700", textDecoration: "none" }}>Sign Up</Link>
+          </p>
         </div>
       </FadeIn>
     </div>

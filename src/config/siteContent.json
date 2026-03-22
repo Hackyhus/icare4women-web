@@ -2,15 +2,9 @@
   "global": {
     "projectName": "iCare4Women",
     "doctorName": "Dr. Maryam",
-    "pricing": {
-      "amount": "₦50,000",
-      "currency": "NGN",
-      "note": "₦50,000 per session • Online only"
-    },
     "vaginismusRedirectUrl": "https://beyondvaginismus.com",
     "calendlySetup": {
-      "durationStr": "45 minutes",
-      "basePriceStr": "₦50,000"
+      "durationStr": "45 minutes"
     },
     "contactEmail": "drmaryam@icare4women.com"
   },
@@ -28,8 +22,8 @@
       },
       {
         "step": 2,
-        "title": "Complete Payment",
-        "description": "Confirm your appointment by making the ₦50,000 payment for the session."
+        "title": "Confirm Appointment",
+        "description": "Follow the booking instructions to secure your private consultation slot."
       },
       {
         "step": 3,
@@ -50,6 +44,8 @@
       "id": "reproductive-health",
       "title": "Reproductive Health Consultation",
       "whoItsFor": "Women experiencing general reproductive health concerns needing expert review.",
+      "price": 25000,
+      "priceStr": "₦25,000",
       "includes": [
         "Comprehensive symptom review",
         "Diagnostic guidance",
@@ -61,6 +57,8 @@
       "id": "fertility-strategy",
       "title": "Fertility Strategy Session",
       "whoItsFor": "Couples or individuals looking to understand and optimize their fertility journey.",
+      "price": 25000,
+      "priceStr": "₦25,000",
       "includes": [
         "In-depth fertility history analysis",
         "Review of past investigations",
@@ -72,6 +70,8 @@
       "id": "pregnancy-support",
       "title": "Pregnancy Support Consultation",
       "whoItsFor": "Expectant mothers seeking trusted advice and second opinions during pregnancy.",
+      "price": 50000,
+      "priceStr": "₦50,000",
       "includes": [
         "Timeline and milestone review",
         "Symptom management advice",
@@ -83,11 +83,65 @@
       "id": "hormonal-cycle",
       "title": "Hormonal & Cycle Review",
       "whoItsFor": "Women dealing with irregular cycles, PCOS, or perimenopause symptoms.",
+      "price": 25000,
+      "priceStr": "₦25,000",
       "includes": [
         "Cycle tracking analysis",
         "Hormonal imbalance evaluation",
         "Management strategies for PCOS/Menopause",
         "Dietary and lifestyle adjustments"
+      ]
+    },
+    {
+      "id": "pcos-management",
+      "title": "PCOS Management Session",
+      "whoItsFor": "Specific depth for managing Polycystic Ovary Syndrome symptoms and long-term health.",
+      "price": 25000,
+      "priceStr": "₦25,000",
+      "includes": [
+        "Hormonal profile review",
+        "Metabolic health assessment",
+        "Targeted PCOS dietary plan",
+        "Symptom management roadmap"
+      ]
+    },
+    {
+      "id": "vaginal-infections-guidance",
+      "title": "Vaginal Health & Infections",
+      "whoItsFor": "Women struggling with recurrent discharge, odors, or discomfort.",
+      "price": 25000,
+      "priceStr": "₦25,000",
+      "includes": [
+        "Symptom-based diagnostic screening",
+        "Microbiome balance advice",
+        "Recurrence prevention strategy",
+        "Appropriate medication guidance"
+      ]
+    },
+    {
+      "id": "menopause-support",
+      "title": "Menopause Support Consultation",
+      "whoItsFor": "Navigating perimenopause or menopause symptoms and hormone replacement options.",
+      "price": 25000,
+      "priceStr": "₦25,000",
+      "includes": [
+        "Symptom severity assessment",
+        "HRT and non-hormonal options review",
+        "Bone and heart health planning",
+        "Quality of life optimization"
+      ]
+    },
+    {
+      "id": "pelvic-floor-consult",
+      "title": "Pelvic Floor & Bladder Health",
+      "whoItsFor": "Addressing leakage, heaviness, or pain associated with pelvic floor dysfunction.",
+      "price": 25000,
+      "priceStr": "₦25,000",
+      "includes": [
+        "Dysfunction classification",
+        "Personalized exercise guidance",
+        "Lifestyle adjustment plan",
+        "Referral recommendations if needed"
       ]
     }
   ],

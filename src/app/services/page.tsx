@@ -28,7 +28,7 @@ export default function ServicesPage() {
           </div>
           <h1 className="text-gradient" style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)", marginBottom: "1rem", fontWeight: "700" }}>Services & Pricing</h1>
           <p style={{ fontSize: "1.1rem", color: "var(--rc-text-light)" }}>
-            Clear, upfront pricing with no hidden fees. All our specialized sessions are conducted securely online for your privacy and convenience.
+            Our specialized sessions are conducted securely online for your privacy and convenience.
           </p>
         </div>
       </FadeIn>
@@ -44,7 +44,7 @@ export default function ServicesPage() {
                title={service.title}
                whoItsFor={service.whoItsFor}
                includes={service.includes}
-               priceStr={siteContent.global.pricing.amount}
+               priceStr={service.priceStr}
                durationStr={siteContent.global.calendlySetup.durationStr}
                ctaLink={"/book?service=" + service.id}
              />

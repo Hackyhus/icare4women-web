@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Rahmah Cycles Brand Palette */
-  --rc-primary: #D1A2B5; /* Soft Muted Pink/Lavender */
-  --rc-primary-dark: #A36D85;
-  --rc-primary-light: #F3E5EC;
+  /* iCare4Women Professional Light Mode w/ Pink Accents */
+  --rc-primary: #BC7A93; /* More vibrant Brand Pink */
+  --rc-primary-dark: #8B4C6A;
+  --rc-primary-light: #EDD6E0;
   
-  --rc-secondary: #E3D2C1; /* Warm Beige */
-  --rc-secondary-light: #F9F6F0;
+  --rc-secondary: #D9C5B2; /* Slightly deeper Beige */
+  --rc-secondary-light: #F7F3F0;
 
-  --rc-accent: #9FBDA3; /* Soft Sage Green */
+  --rc-accent: #8B4C6A; /* Enhanced Contrast Accent */
 
-  --rc-text-main: #3D353A;
-  --rc-text-light: #6E686A;
-  --rc-bg: #FCFBFA;
+  --rc-text-main: #1e293b; /* Slate 800 for professional readability */
+  --rc-text-light: #64748b;
+  --rc-bg: #ffffff; /* Pure Light Mode Background */
   
   --rc-surface: #FFFFFF;
   --rc-border: #E8E2E5;
@@ -22,15 +22,15 @@
   --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
 
-  /* Elevations */
-  --shadow-sm: 0 2px 8px rgba(163, 109, 133, 0.05);
-  --shadow-md: 0 8px 24px rgba(163, 109, 133, 0.08);
-  --shadow-lg: 0 16px 48px rgba(163, 109, 133, 0.12);
-  --shadow-glow: 0 0 40px rgba(209, 162, 181, 0.3); /* Premium glow */
+  /* Enhanced Contrast Elevations */
+  --shadow-sm: 0 4px 12px rgba(139, 76, 106, 0.08);
+  --shadow-md: 0 8px 24px rgba(139, 76, 106, 0.12);
+  --shadow-lg: 0 16px 48px rgba(139, 76, 106, 0.15);
+  --shadow-glow: 0 0 40px rgba(188, 122, 147, 0.25);
   
-  /* Luxury Gradients */
-  --gradient-text: linear-gradient(135deg, var(--rc-primary-dark) 0%, var(--rc-primary) 100%);
-  --gradient-glow: radial-gradient(circle at center, rgba(209, 162, 181, 0.15) 0%, rgba(255,255,255,0) 70%);
+  /* Enhanced Gradients */
+  --gradient-text: linear-gradient(135deg, var(--rc-primary-dark) 0%, #A6627F 100%);
+  --gradient-glow: radial-gradient(circle at center, rgba(188, 122, 147, 0.15) 0%, rgba(255,255,255,0) 70%);
 
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -38,35 +38,13 @@
   --transition-slow: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   /* Glassmorphism */
-  --rc-glass-bg: rgba(255, 255, 255, 0.85);
-  --rc-glass-bg-trans: rgba(255, 255, 255, 0.4);
-  --rc-glass-border: rgba(255, 255, 255, 0.6);
+  --rc-glass-bg: rgba(255, 255, 255, 0.92);
+  --rc-glass-bg-trans: rgba(255, 255, 255, 0.5);
+  --rc-glass-border: rgba(255, 255, 255, 0.7);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --rc-text-main: #FDFBFC;
-    --rc-text-light: #E4C8D4;
-    --rc-bg: #1A1316;
-    
-    --rc-surface: #2A1D24;
-    --rc-border: #4A3C43;
-    
-    --rc-primary: #DDAEC1; /* Lighter pink for dark mode contrast */
-    --rc-primary-dark: #F3E5EC;
-    --rc-primary-light: #3D2630;
-    
-    --shadow-md: 0 8px 24px rgba(209, 162, 181, 0.15);
-    --shadow-glow: 0 0 40px rgba(209, 162, 181, 0.15);
-
-    /* Glassmorphism Dark */
-    --rc-glass-bg: rgba(42, 29, 36, 0.85);
-    --rc-glass-bg-trans: rgba(42, 29, 36, 0.4);
-    --rc-glass-border: rgba(255, 255, 255, 0.08);
-    
-    --gradient-text: linear-gradient(135deg, #FDFBFC 0%, var(--rc-primary) 100%);
-  }
-}
+/* Forcing Light Mode for public/landing pages as requested */
+/* @media (prefers-color-scheme: dark) { ... } removed */
 
 * {
   box-sizing: border-box;
@@ -163,17 +141,104 @@ button:active {
   box-shadow: var(--shadow-glow);
 }
 
-.text-gradient {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+@keyframes soft-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(188, 122, 147, 0.4); }
+  70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(188, 122, 147, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(188, 122, 147, 0); }
 }
 
-@media (prefers-color-scheme: dark) {
-  .glass {
-    background: var(--rc-glass-bg);
-    border: 1px solid var(--rc-glass-border);
+.soft-pulse {
+  animation: soft-pulse 2s infinite;
+}
+
+.glow-border {
+  border: 1px solid var(--rc-primary-light);
+  box-shadow: 0 0 15px rgba(188, 122, 147, 0.2);
+}
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .sidebar-desktop {
+    display: none !important;
   }
+}
+
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.bg-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-glow::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: var(--gradient-glow);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.btn-primary {
+  background: var(--rc-primary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(188, 122, 147, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--rc-primary-dark);
+  box-shadow: 0 15px 30px rgba(188, 122, 147, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--rc-secondary-light);
+  color: var(--rc-primary-dark);
+  border: 1px solid var(--rc-primary-light);
+  padding: 1rem 2rem;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--rc-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--rc-primary-light);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rc-primary);
 }
