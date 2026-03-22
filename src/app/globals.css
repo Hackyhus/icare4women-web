@@ -242,3 +242,16 @@ button:active {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--rc-primary);
 }
+
+/* Split grid layouts (about page, homepage doctor section) */
+.about-split,
+.doctor-split {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .about-split,
+  .doctor-split {
+    grid-template-columns: 1fr !important;
+  }
+}
