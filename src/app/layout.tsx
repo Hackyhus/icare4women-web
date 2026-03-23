@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   description: siteContent.home.hero.subheadline,
   manifest: "/manifest.json",
   icons: {
-    apple: "/icons/icon-192x192.svg",
+    icon: "/icon.svg",
+    apple: "/icon.svg",
   },
   openGraph: {
     title: siteContent.global.projectName,
