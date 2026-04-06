@@ -183,7 +183,8 @@ function BookContent() {
                     </div>
                     <p style={{ fontSize: "0.9rem", color: "var(--rc-text-light)", marginBottom: "1rem" }}>{service.whoItsFor}</p>
                     <div style={{ marginTop: "auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                      <span style={{ fontWeight: "700", color: "var(--rc-primary-dark)", fontSize: "1.2rem" }}>{service.priceStr}</span>
+                      {/* Price removed until Step 2 */}
+
                       <span style={{ fontSize: "0.85rem", color: "var(--rc-text-light)" }}>45 mins</span>
                     </div>
                   </div>

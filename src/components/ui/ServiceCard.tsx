@@ -57,9 +57,8 @@ export default function ServiceCard({
         gap: "1rem"
       }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.5rem" }}>
-          {priceStr && (
-            <span style={{ fontSize: "1.5rem", fontWeight: "700", color: "var(--rc-primary-dark)" }}>{priceStr}</span>
-          )}
+          {/* Price removed until checkout */}
+
           <span style={{ fontSize: "0.9rem", background: "var(--rc-primary-light)", color: "var(--rc-primary-dark)", padding: "0.3rem 0.8rem", borderRadius: "10px", fontWeight: "600" }}>
             {durationStr}
           </span>
